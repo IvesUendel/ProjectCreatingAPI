@@ -14,9 +14,11 @@ public class UserService {
     private List<User> usersList;
     private ModelMapper modelMapper;
 
-    public UserService(List<User> usersList, ModelMapper modelMapper){
-        this.usersList = usersList;
-        this.modelMapper = modelMapper;
+    public UserService(){
+        this.usersList = new ArrayList<>();
+        this.modelMapper = new ModelMapper();
+
+        this.modelMapper.getConfiguration().setAmbiguityIgnored(true);
     }
 
     public List<UserDTOOutput> listUsers(){

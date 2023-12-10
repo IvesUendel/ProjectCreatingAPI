@@ -11,9 +11,9 @@ public class UserController {
     private UserService userService;
     private ObjectMapper objectMapper;
 
-    public UserController(UserService userService, ObjectMapper objectMapper){
-        this.userService = userService;
-        this.objectMapper = objectMapper;
+    public UserController(){
+        this.userService = new UserService();
+        this.objectMapper = new ObjectMapper();
     }
 
     public void responseRequests(){
